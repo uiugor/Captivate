@@ -1,3 +1,5 @@
+//Localizar arquivo CPM.js e alterar as seguintes linhas
+
 quizReportingData: {
             ISRUnknownErrorStr: 'Resultados enviado com sucesso, um de nossos analistas irá recebe-lo!',
             ISRNoConnectionErrorStr: 'Sem conexão',
