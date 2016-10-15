@@ -31,8 +31,8 @@
             successCriteria: 2,
             internalServerURL: 'http://200.195.131.180/captivate/internalServerReporting.php',
             companyName: 'Inside Sistemas',
-            departmentName: 'Suporte', //Alterar linha
-            courseName: 'Avaliacao', //Alterar linha
+            departmentName: 'Suporte', //Alterar linha - Nome do Departamento
+            courseName: 'Avaliacao', //Alterar linha - Nome do Curso
             courseNode: '',
             isTrackedFlag: true,
             trackingUrlEncodeVersionAndSession: 1,
@@ -65,7 +65,7 @@
             rtsab: 'Enviar todas as respostas',
             rtsanyb: 'Enviar mesmo assim',
             rtrtqb: 'Retornar ao quiz',
-            rtWarningTitle: 'Inside Ensina',
+            rtWarningTitle: 'Inside Ensina', //Alterar linha, titulo da janela
             rtUnsupportedBowser: 'Este navegador não oferece suporte à parte do conteúdo do arquivo que você está tentando exibir. Use um dos seguintes navegadores:<ul><li>Internet Explorer 9 ou posterior</li><li>Safari 5.1 ou posterior</li><li>Google Chrome 17 ou posterior</li></ul>Firefox @FFVERSION ou posterior</li></ul>'
         },
         
@@ -156,4 +156,39 @@ cp.InternalServerAdapter.prototype.BuildInteractionsNode = function(a) {
     b += '<Latency value="' + this.m_interaction_ary[a].latency_str + '"/>\r\t';
     b += '<Attempt value="' + this.m_interaction_ary[a].currentAttempt + '"/>\r\t';
     return b + "</Interactions>\r\t"
+};
+
+cp.RuntimeMessageBox = function(a, b, c, d, e, f, g, h, i, j) {
+    this.m_parent = a;
+    this.m_MessageBoxElement = void 0;
+    this.m_id = "CPRuntimeMsgBox_ID";
+    this.m_titleText = "Inside Ensina";
+    this.m_messageText = "This is Adobe Captivate Run Time Message Dialog";
+    this.m_firstButtonText = "OK";
+    this.m_secondButtonText = "CANCEL";
+    this.m_ChkBoxText = "Don't ask me again";
+    this.m_numberOfButtons = b;
+    this.m_secondButtonHandler = this.m_firstButtonHandler = void 0;
+    this.m_DontAskMe = !1;
+    this.m_foregroundFillColor = c;
+    this.m_foregroundStrokeColor = d;
+    this.m_buttonFillColor =
+        e;
+    this.m_buttonStrokeColor = f;
+    this.m_separatorColor = g;
+    this.m_textColor = h;
+    this.m_textShadowColor = i;
+    this.m_textFontName = j;
+    this.TITLE_DEFAULT_TOP_OFFSET = this.MESSAGE_DEFAULT_LEFT_OFFSET = this.SEPARATOR_DEFAULT_LEFT_OFFSET = this.TITLE_DEFAULT_LEFT_OFFSET = 10;
+    this.SEPARATOR_DEFAULT_TOP_OFFSET = 20;
+    this.MESSAGE_DEFAULT_TOP_OFFSET = 30;
+    this.BUTTON_BOTTOM_OFFSET = 10;
+    this.BG_DEFAULT_WIDTH = 493;
+    this.BG_DEFAULT_HEIGHT = 219;
+    this.FG_DEFAULT_WIDTH = 478;
+    this.FG_DEFAULT_HEIGHT = 198;
+    this.BUTTON_DEFAULT_WIDTH = 100;
+    this.BUTTON_DEFAULT_HEIGHT =
+        33;
+    this.INTER_BUTTON_OFFSET = 15
 };
